@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:visited {
+	color: #fff;
+}
+a:focus {
+	color: #fff;
+}
+
+body {
+	font-family: sans-serif;
+}
