@@ -1,5 +1,5 @@
 <template>
-	<div class="h-screen bg-gradient-to-tr from-white to-indigo-500">
+	<div class="h-screen">
 		<div class="float-left illust3">
 			<img class="w-4/5" src="../assets/welcome.png" />
 		</div>
