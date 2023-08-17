@@ -19,7 +19,7 @@
 							>Email</label
 						>
 						<input
-							type="text"
+							type="email"
 							id="email"
 							v-model="email"
 							class="bg-gray-50 border border-blue-600 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -37,6 +37,9 @@
 							class="bg-gray-50 border border-blue-600 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500"
 							placeholder="password min 8 characters"
 							required />
+					</div>
+					<div>
+						<p v-if="errMsg" class="text-red-600">{{ errMsg }}</p>
 					</div>
 					<button
 						@click="register"
@@ -57,7 +60,7 @@ import { useRouter } from 'vue-router'; // import router
 
 const email = ref('');
 const password = ref('');
-
+const errMsg = ref();
 const router = useRouter(); // get a reference to our vue router
 
 const submitHandler = (e) => {
@@ -71,8 +74,9 @@ const register = () => {
 			router.push('/profile'); // redirect to the profile
 		})
 		.catch((error) => {
-			console.log(error.code);
-			alert(error.message);
+			if (error.code === 'auth/email-already-in-use') {
+				errMsg.value = 'Email already in use';
+			}
 		});
 };
 </script>
