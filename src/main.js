@@ -4,9 +4,6 @@ import App from './App.vue';
 import router from './router';
 import { initializeApp } from 'firebase/app';
 import { getAuth, connectAuthEmulator } from 'firebase/auth';
-import VueSweetalert2 from 'vue-sweetalert2';
-import 'sweetalert2/dist/sweetalert2.min.css';
-import { createPinia } from 'pinia';
 
 /* code from our Firebase console */
 const firebaseConfig = {
