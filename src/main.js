@@ -26,11 +26,9 @@ initializeApp(firebaseConfig);
 if (location.hostname === 'localhost') {
 	connectAuthEmulator(getAuth(), 'http://localhost:9099');
 }
-const pinia = createPinia();
+
 const app = createApp(App);
 
-app.use(VueSweetalert2);
-app.use(pinia);
 app.use(router);
 
 app.mount('#app');
